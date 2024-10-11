@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RVA SHOW ROOM</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <a href="index.html" class="logo"> <span>RVA CAR</span>SHOWROOM</a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+       
+        <div id="login-btn">
+            <button class="btn" id="openModal">Login</button>
+        </div>
+    
+        <!-- The Modal -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Select Login Type</h2>
+                <button class="btn" id="userLogin">User Login</button>
+                <button class="btn" id="sellerLogin">Seller Login</button>
+            </div>
+        </div>
+    
+        <script>
+            // Get the modal
+            var modal = document.getElementById("loginModal");
+    
+            // Get the button that opens the modal
+            var btn = document.getElementById("openModal");
+    
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+    
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+    
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+    
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+    
+            // Add event listeners for the login buttons
+            document.getElementById("userLogin").onclick = function() {
+                window.location.href = "userlogin.jsf"; // Replace with the actual user login page URL
+            }
+    
+            document.getElementById("sellerLogin").onclick = function() {
+                window.location.href = "sellerlogin.jsf"; // Replace with the actual seller login page URL
+            }
+        </script>
+    </header>
+
+    <section class="home" id="home">
+        <h1 class="home-parallax" data-speed="-2">Find your car</h1>
+        <img class="home-parallax" data-speed="5" src="car-inventory.png" alt="">
+        <a href="userlogin.jsf" class="btn home-parallax" data-speed="7">Explore cars</a>
+    </section>
+
+    
+    
+    <section class="services" id="services">
+        <h1 class="heading"> Our <span> Services </span></h1>
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-car"></i>
+                <h3>Car Selling</h3>
+                <p>Don't miss your chance to own this exceptional 2023 [Car Make] [Car Model]. Contact us today to schedule a test drive and experience the thrill for yourself. Our knowledgeable team is here to assist you with any questions and guide you through the buying process. </p>
+                <a href="" class="btn">Read more</a>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-tools"></i>
+                <h3>Parts Repair</h3>
+                <p>Schedule your car parts repair service with [Your Car Dealership Name] today, and trust us to get your vehicle back on the road in optimal condition. Contact our service team to book an appointment or inquire about our range of repair services. Your car deserves the best .</p>
+                <a href="#" class="btn">Read more</a>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-car-crash"></i>
+                <h3>Car Insurance</h3>
+                <p>Don't leave your vehicle's protection to chance. Contact [Your Car Dealership Name]'s insurance experts today to discuss your car insurance needs. We're committed to providing you with the peace of mind you deserve on every journey. Your safety and security are our top priorities!.</p>
+                <a href="#" class="btn">Read more</a>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-car-battery"></i>
+                <h3>Battery Replacement</h3>
+                <p>Is your vehicle showing signs of a weak or failing battery? Don't let a dead battery leave you stranded. Contact [Your Car Dealership Name] today to schedule your battery inspection and replacement service. We're here to ensure your vehicle starts reliably and keeps you confidence.</p>
+                <a href="#" class="btn">Read more</a>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-gas-pump"></i>
+                <h3>Oil Change</h3>
+                <p>Don't delay your vehicle's much-needed oil change. Contact [Your Car Dealership Name] today to schedule your oil change service. Our goal is to help you maintain the heart of your vehicle, ensuring it performs at its best mile after mile. Trust us for all for your support, and time.</p>
+                <a href="#" class="btn">Read more</a>
+            </div>
+
+
+            <div class="box">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support </h3>
+                <p>At [Your Car Dealership Name], our commitment to your satisfaction extends beyond regular business hours. Experience the convenience and peace of mind of 24/7 support by choosing us for all your automotive needs. We're here to serve you around the clock,& good service</p>
+                <a href="#" class="btn">Read more</a>
+            </div>
+        </div>
+    </section>
+
+   <section class="contact" id="contact">
+
+   <h1 class="heading"> <span>Contact</span> us</h1>
+
+
+   <div class="row">
+
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30278.13710417882!2d73.80464134611223!3d18.44887904868683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2953f2263c307%3A0x79aeb881437adebd!2sNarhe%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1696148636481!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <form action="">
+        <h3>Get in touch</h3>
+        <input type="text" placeholder="name" class="box">
+        <input type="email" placeholder="email" class="box">
+        <input type="number" placeholder="number" class="box">
+        <textarea placeholder="message" class="box" cols="30" rows="10"></textarea>
+        <input type="submit" value="send message" class="btn">
+    </form>
+
+   </div>
+   </section>
+
+   <section class="footer">
+     <div class="credit"> Created by RVA CAR SHOWROOM all rights reserved!</div>
+   </section>
+
+
+
+
+
+
+
+     
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+<h:head>
+    <title>Update Car</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h3 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .ui-panelgrid {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .ui-panelgrid-cell {
+            padding: 10px;
+        }
+
+        .ui-outputlabel {
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        .ui-inputtext, .ui-password {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .ui-inputtext:focus, .ui-password:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        .ui-message {
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+
+        .ui-message-error {
+            color: #e74c3c;
+        }
+    </style>
+</h:head> 
+<body> 
+    <h3 align="center"><u>Update Car</u></h3>
+    <center>
+        <h:form>
+            <h:panelGrid columns="3" cellpadding="5" styleClass="ui-panelgrid">
+                <h:outputLabel for="id" value="Enter ID" styleClass="ui-outputlabel" />
+                <h:inputText id="id" required="true" requiredMessage="Enter ID" value="#{carBean.id}" styleClass="ui-inputtext" />
+                <h:message for="id" styleClass="ui-message ui-message-error"/>
+
+                <h:outputLabel for="name" value="Enter Name" styleClass="ui-outputlabel" />
+                <h:inputText id="name" required="true" requiredMessage="Enter Name" value="#{carBean.name}" styleClass="ui-inputtext" />
+                <h:message for="name" styleClass="ui-message ui-message-error"/>
+
+                <h:outputLabel for="model" value="Enter Model" styleClass="ui-outputlabel" />
+                <h:inputText id="model" required="true" requiredMessage="Enter Model" value="#{carBean.model}" styleClass="ui-inputtext" />
+                <h:message for="model" styleClass="ui-message ui-message-error"/>
+
+                <h:outputLabel for="desc" value="Enter Description" styleClass="ui-outputlabel" />
+                <h:inputText id="desc" required="true" requiredMessage="Enter Description" value="#{carBean.description}" styleClass="ui-inputtext" />
+                <h:message for="desc" styleClass="ui-message ui-message-error"/>
+
+                <h:outputLabel for="price" value="Enter price" styleClass="ui-outputlabel" />
+                <h:inputText id="price" required="true" requiredMessage="Enter price" value="#{carBean.price}" styleClass="ui-inputtext" />
+                <h:message for="price" styleClass="ui-message ui-message-error"/>
+
+                <h:outputLabel for="update" />
+                <h:commandButton id="update" value="Update" action="#{carBean.update()}" styleClass="button"/>
+                <h:message for="update"/>
+            </h:panelGrid>
+        </h:form>
+    </center>
+</body> 
+</html>

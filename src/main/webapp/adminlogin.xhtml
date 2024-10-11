@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+<h:head>
+    <title>Admin Login</title>
+    <h:outputStylesheet library="css" name="Admin.css"/>
+</h:head> 
+<body> 
+
+<h3 align='center'><u>Admin Login</u></h3>
+
+<center>
+    <div class="login-box">
+        <h:form>
+            <h:panelGrid columns="3" cellpadding="5">
+                <h:outputLabel for="username" value="Enter Username" style="font-weight: bold;"/>
+                <h:inputText id="username" validatorMessage="Username length must be in between 3 and 30" value="#{adminbean.username}">
+                    <f:validateLength minimum="3" maximum="30"/>
+                </h:inputText>
+                <h:message for="username" style="color:red"/>
+
+                <h:outputLabel for="password" value="Enter Password" style="font-weight: bold;"/>
+                <h:inputSecret id="password" validatorMessage="Password length must be in between 3 and 30" value="#{adminbean.password}">
+                    <f:validateLength minimum="3" maximum="30"/>
+                </h:inputSecret>
+                <h:message for="password" style="color:red"/>
+
+                <h:outputLabel for="login"/>
+                <h:commandButton id="login" styleClass="button" value="Login" action="#{adminbean.validateadminlogin()}"/>
+                <h:message for="login"/>
+            </h:panelGrid>
+        </h:form>
+    </div>
+</center>
+
+</body> 
+</html>

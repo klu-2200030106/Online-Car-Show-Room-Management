@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+<h:head>
+    <title>Update Seller</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h3 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .ui-panelgrid {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .ui-panelgrid-cell {
+            padding: 10px;
+        }
+
+        .ui-outputlabel {
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        .ui-inputtext, .ui-password {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .ui-inputtext:focus, .ui-password:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        .ui-message {
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+
+        .ui-message-error {
+            color: #e74c3c;
+        }
+    </style>
+</h:head> 
+<body> 
+    <h3 align="center"><u>Update Seller</u></h3>
+    <center>
+        <h:form>
+            <h:panelGrid columns="3" cellpadding="5">
+                <h:outputLabel for="id" value="Enter ID" />
+                <h:inputText id="id" required="true" requiredMessage="Enter ID" value="#{sellerbean.id}" />
+                <h:message for="id" style="color:red"/>
+
+                <h:outputLabel for="name" value="Enter Name" />
+                <h:inputText id="name" required="true" requiredMessage="Enter Name" value="#{sellerbean.name}" />
+                <h:message for="name" style="color:red"/>
+
+                <h:outputLabel for="password" value="Enter password" />
+                <h:inputSecret id="password" required="true" requiredMessage="Enter pwd" value="#{sellerbean.password}" />
+                <h:message for="password" style="color:red"/>
+
+                <h:outputLabel for="contact" value="Enter Contact" />
+                <h:inputText id="contact" required="true" requiredMessage="Enter contact" validatorMessage="Contact no. must contains 10 digits only" value="#{sellerbean.contact}" >
+                    <f:validateRegex pattern="[6789][0-9]{9}"></f:validateRegex>
+                </h:inputText>
+                <h:message for="contact" style="color:red"/>
+
+                <h:outputLabel for="update"/>
+                <h:commandButton id="update" styleClass="button" value="Update" action="#{sellerbean.update()}"/>
+                <h:message for="update"/>
+            </h:panelGrid>
+        </h:form>
+    </center>
+</body> 
+</html>

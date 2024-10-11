@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h3 {
+            color: #555;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4b400;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .action-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .action-button:hover {
+            background-color: #d32f2f;
+        }
+
+        .action-button:focus {
+            outline: none;
+        }
+    </style>
+</h:head> 
+<body> 
+
+<div class="container">
+    <h3 align="center"><u>Delete Sellers</u></h3>
+    <h:dataTable value="#{sellerbean.sellerlist}" var="seller" border="1">
+        <h:column>
+            <f:facet name="header">ID</f:facet>
+            #{seller.id}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Name</f:facet>
+            #{seller.name}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Gender</f:facet>
+            #{seller.gender}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Email</f:facet>
+            #{seller.email}
+        </h:column>
+        
+        <h:column>
+            <f:facet name="header">Contact</f:facet>
+            #{seller.contact}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Action</f:facet>
+            <h:form>
+                <h:commandLink value="Delete" action="#{sellerbean.delete(seller.id)}" styleClass="action-button"/>
+            </h:form>
+        </h:column>
+    </h:dataTable>
+</div>
+
+</body> 
+</html>

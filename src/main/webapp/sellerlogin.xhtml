@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+    <title>Seller LOGIN</title>
+    <h:outputStylesheet library="css" name="Login.css"/>
+</h:head> 
+<body> 
+    <h3 align="center"><u>Seller Login</u></h3>
+    <center>
+        <div class="login-box">
+            <h:form>
+                <h:panelGrid columns="3" cellpadding="5">
+                    <h:outputLabel for="email" value="Enter Email:" style="font-weight: bold;"/>
+                    <h:inputText id="email" validatorMessage="Email is Mandatory" value="#{sellerbean.email}">
+                        <f:validateRequired/>
+                    </h:inputText>
+                    <h:message for="email" style="color:red"/>
+
+                    <h:outputLabel for="password" value="Enter Password:" style="font-weight: bold;"/>
+                    <h:inputSecret id="password" validatorMessage="Password Length must be 3 to 30" value="#{sellerbean.password}">
+                        <f:validateLength minimum="3" maximum="30"/>
+                    </h:inputSecret>
+                    <h:message for="password" style="color:red"/>
+
+                    <h:outputLabel for="login"/>
+                    <h:commandButton id="login" styleClass="button" value="Login" action="#{sellerbean.validatelogin()}" />
+                    <h:message for="login"/>
+                    
+                    
+                </h:panelGrid>
+            </h:form>
+        </div>
+    </center>
+</body> 
+</html>

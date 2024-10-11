@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+    <title>User Registration</title>
+    <h:outputStylesheet library="css" name="Signup.css"></h:outputStylesheet>
+</h:head> 
+<body> 
+    <h3 align="center"><u>User Registration</u></h3>
+    <center>
+        <div class="registration-box">
+            <h:form>
+                <h:panelGrid columns="3" cellpadding="5">
+                    <h:outputLabel for="name" value="Enter Name" style="font-weight: bold;" />
+                    <h:inputText id="name" required="true" requiredMessage="Enter Name" value="#{userbean.name}" />
+                    <h:message for="name" style="color:red"/>
+
+                    <h:outputLabel for="gender" value="Select Gender" style="font-weight: bold;" />
+                    <h:selectOneRadio id="gender" required="true" requiredMessage="Enter gender" value="#{userbean.gender}">
+                        <f:selectItem itemLabel="Male" itemValue="MALE"/>
+                        <f:selectItem itemLabel="Female" itemValue="FEMALE"/>
+                        <f:selectItem itemLabel="Others" itemValue="OTHERS"/>
+                    </h:selectOneRadio>
+                    <h:message for="gender" style="color:red"/>
+
+                    <h:outputLabel for="email" value="Enter Email" style="font-weight: bold;" />
+                    <h:inputText id="email" required="true" requiredMessage="Enter email" value="#{userbean.email}" />
+                    <h:message for="email" style="color:red"/>
+
+                    <h:outputLabel for="password" value="Enter Password" style="font-weight: bold;" />
+                    <h:inputSecret id="password" required="true" requiredMessage="Enter password" value="#{userbean.password}" />
+                    <h:message for="password" style="color:red"/>
+
+                    <h:outputLabel for="contact" value="Enter Contact" style="font-weight: bold;" />
+                    <h:inputText id="contact" required="true" requiredMessage="Enter contact" validatorMessage="Contact no. must contain 10 digits only" value="#{userbean.contact}">
+                        <f:validateRegex pattern="[6789][0-9]{9}"/>
+                    </h:inputText>
+                    <h:message for="contact" style="color:red"/>
+
+                    <h:outputLabel for="add"/>
+                    <h:commandButton id="add" styleClass="button" value="Signup" action="#{userbean.add()}"/>
+                    <h:message for="add"/>
+                    
+                    <h:outputLink value="userlogin.jsf" style="float: right;">Already have an account? Log in here</h:outputLink>
+                </h:panelGrid>
+            </h:form>
+        </div>
+    </center>
+</body> 
+</html>
